@@ -1,0 +1,654 @@
+/* @import "reset.css"; */
+@import "normalize.css";
+
+/* inport tipo de letra de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color_blanco: #fff;
+  --color_blanco2: #f3f3f3;
+  --color_blanco3: #e6e6e6;
+  --color_gris_claro: #8f8f8f;
+  --color_gris: #28292d;
+  --color_gris2: #202020;
+  --color_gris_oscuro: #1c1c1c;
+  --gris: #1b1b1b;
+  --gris2: #1e1e1e;
+  --color_negro: #000;
+  --color_verde: #41c779;
+  --verde_claro: #0CF538;
+  --verde: #006400;
+  --verde2: #008000;
+  --color_azul: #1164A8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--color_blanco);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* menu y el header */
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/img/fondocole.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.menu {
+  width: 95%;
+  margin: auto;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 110px;
+  cursor: pointer;
+}
+
+.titulo {
+  text-decoration: none;
+  color: var(--color_blanco);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.menu ul li a {
+  text-decoration: none;
+  color: var(--color_blanco);
+  text-transform: uppercase;
+}
+
+.menu ul li::after {
+  content: '';
+  height: 3px;
+  width: 0;
+  background: var(--color_verde);
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.menu ul li:hover::after {
+  width: 100%;
+}
+
+.menu ul li a:active {
+  color: var(--color_verde);
+  transition: .5s;
+}
+
+.content_pagina {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: var(--color_blanco);
+}
+
+.content_pagina h1 {
+  font-size: 70px;
+  margin-top: 80px;
+}
+
+.content_pagina p {
+  margin: 20px auto;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+button {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 15px 5px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid var(--color_verde);
+  background: transparent;
+  color: var(--color_blanco);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.boton {
+  background: var(--color_verde);
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+button:hover .boton {
+  width: 100%;
+}
+
+button:hover {
+  border: none;
+}
+
+footer {
+  background-color: 	var(--color_azul);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+footer p {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+hr {
+  position: absolute;
+  right: 200px;
+  width: 1000px;
+}
+
+.destacado {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  padding-top: 30px;
+}
+
+.destacado li {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.destaca2 a {
+  padding: 8px;
+}
+
+.destacado a {
+  color: var(--color_verde);
+  text-decoration: none;
+}
+
+.destacado a:hover {
+  color: 	var(--verde_claro);
+  font-weight: bold;
+  transition: .4s;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+li {
+  margin: 3px;
+  /* display: inline-block; */
+}
+
+.iconos p {
+  color: var(--color_blanco);
+  padding-left: 100px;
+  font-weight: bold;
+  /* font-family: monospace; */
+}
+
+h5 {
+  color: var(--color_blanco2);
+  font-weight: bold;
+  margin-bottom: 20px;
+  /* font-family: sans-serif; */
+}
+
+.minigion {
+  color: var(--color_blanco);
+}
+
+span {
+  color: var(--color_verde);
+}
+
+/* iconos de redes sociales */
+
+/* ########################################################################### */
+/* ##################### LOGIN ###############################################*/
+/* ########################################################################### */
+
+/* Estilos al login  */
+
+.caja_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../assets/img/fondocole.png);
+    background-size: cover;
+    backdrop-filter: blur(3px);
+}
+
+/* se crea la caja que contendra el formulario */
+.box {
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: var(--color_gris_oscuro);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* termina la linea que rodean el marco */
+.login_form {
+    position: absolute;
+    inset: 2px;
+    border-radius: 8px;
+    background: var(--color_gris);
+    z-index: 10;
+    padding: 110px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* titulo */
+.login_form h2 {
+    color:  var(--color_verde);
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+/* cajas de texto */
+.input_Box {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.input_Box input {
+    position: relative;
+    width: 100%;
+    padding: 5px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--color_gris);
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+
+/* los titulos que se colocan en los input para luego de hacer click salgan */
+.input_Box span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: var(--color_gris_claro);
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    transition: 0.5em;
+}
+
+.input_Box input:valid~span,
+.input_Box input:focus~span {
+    color:  var(--color_verde);
+    transform: translateX(0px) translateY(-37px);
+    font-size: 0.75em;
+}
+
+/* los i que se colocan en los inputs con el color azul */
+.input_Box i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background:  var(--color_verde);
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.input_Box input:valid~i,
+.input_Box input:focus~i {
+    height: 40px;
+}
+
+/* los links */
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links a {
+    margin: 10px 0;
+    font-size: 00.75em;
+    color: var(--color_gris_claro);
+    text-decoration: none;
+}
+
+.links a:hover,
+.links a:nth-child(2) {
+    color:  var(--color_verde);
+}
+
+/* efectos del boton */
+.enviar_login {
+    border: none;
+    outline: none;
+    background:  var(--color_verde);
+    padding: 11px 25px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.enviar_login:active {
+    opacity: 0.8;
+}
+
+/* logo */
+.login .logo {
+    height: 100px;
+    left: calc(50% - 50px);
+    position: absolute;
+    top: -0px;
+    width: 100px;
+}
+
+/* ######################################################################################### */
+/* ########################### ESTILOS DEL SISTEMA WEB ##################################### */
+/* ######################################################################################### */
+
+.btn{
+  position: absolute;
+  top: 15px;
+  left: 45px;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  background: var(--gris);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: left 0.4s ease;
+}
+.btn.click{
+  left: 260px;
+}
+.btn span{
+  color: var(--color_blanco);
+  font-size: 28px;
+  line-height: 45px;
+}
+/* .btn.click span:before{
+  background-image: url(assest/icons/align-justify.svg);
+} */
+
+.sidebar{
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  left: -250px;
+  background: var(--gris);
+  transition: left 0.4s ease;
+  overflow: scroll;
+}
+.sidebar.show{
+  left: 0px;
+}
+
+.sidebar .text{
+  color: var(--color_blanco);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 65px;
+  text-align: center;
+  background: var(--gris2);
+  letter-spacing: 1px;
+}
+
+.lateral ul{
+  background: var(--gris);
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
+.lateral ul li{
+  line-height: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.lateral ul li:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.lateral ul li a{
+  position: relative;
+  color: var(--color_blanco);
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+.lateral ul li.active a{
+  color: var(--verde);
+  background: var(--gris2);
+  border-left-color: var(--verde2);
+}
+.lateral ul li a:hover{
+  background: var(--gris2);
+}
+.lateral ul ul{
+  position: static;
+  display: none;
+}
+/*Funciones script*/
+.lateral ul .aca-show.show{
+  display: block;
+}
+.lateral ul .asis-show.show1{
+  display: block;
+}
+.lateral ul .exa-show.show2{
+  display: block;
+}
+.lateral ul .calif-show.show3{
+  display: block;
+}
+.lateral ul .cuenta-show.show4{
+  display: block;
+}
+.lateral ul .anun-show.show5{
+  display: block;
+}
+.lateral ul .infor-show.show6{
+  display: block;
+}
+.lateral ul .admin-show.show7{
+  display: block;
+}
+.lateral ul ul li{
+  line-height: 42px;
+  border-top: none;
+}
+.lateral ul ul li a{
+  font-size: 17px;
+  color: var(--color_blanco3);
+  padding-left: 80px;
+}
+.lateral ul li.active ul li a{
+  color: var(--color_blanco3);
+  background: var(--gris);
+  border-left-color: transparent;
+}
+.lateral ul ul li a:hover{
+  color: 	var(--verde)!important;
+  background: var(--gris2)!important;
+}
+.lateral ul li a span{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+.lateral ul li a span.rotate{
+  transform: translateY(-50%) rotate(-180deg);
+}
+
+/* Content del sistema */
+.content_sistema {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative;
+  top: 150px; */
+}
+
+/* Barra de navegación */
+.barra_baja {
+  background-color: var(--color_verde);
+  height: 75px;
+}
+
+.btn_cerrar {
+  position: relative;
+  left: 95%;
+  top: 35%;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* estilos de tablas */
+table.tabla_sistem {
+  width: 100%;
+  background-color: #f1f1f1;
+  border-collapse: collapse;
+  border-width: 2px;
+  border-color: #41C779;
+  border-style: solid;
+  color: #000000;
+  
+}
+
+table.tabla_sistem .campos_td,
+table.tabla_sistem .campos_th {
+  border-width: 2px;
+  border-color: #41C779;
+  border-style: solid;
+  padding: 5px;
+}
+
+table.tabla_sistem .campos_th {
+  background-color: #41C779;
+}
+
+.titulo_tabla {
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.campos_th {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.campos_td {
+  font-size: 18px;
+}
+
+.opcion_tablas {
+  text-decoration: none;
+  color: #1164A8;
+  margin: 10px;
+}
+
+/* Titulo y boton de la tabla */
+.cont_buton {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  margin-top: 90px;
+}
+
+.buton_tabla {
+  background-color: #196BCA;
+  color: #fff;
+  font-size: 18px;
+  padding: 9px 10px;
+  border: 0px solid #000;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buton_tabla:hover {
+  background-color: #5482d0;
+}
+
+.buton_tabla:active {
+  transform: scale(0.95);
+}
+
+.buton_hancho{
+  margin-left: 10px;
+}
+
+.cont_tablas {
+  margin-bottom: 5px;
+  
+}
+
+table.tabla_sistem .tit_thead {
+   border-width: 2px;
+   border-color: rgb(26, 80, 48);
+   border-style: solid;
+   padding: 5px;
+   font-size: 20px;
+  font-weight: bold;
+  background-color: #41C779;
+
+}
+.cont_tablas_notas{
+  margin-bottom: 40px;
+}
