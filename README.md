@@ -1,2 +1,2 @@
 # ProyectoCIA
-SISTEMA ESCOLAR WEB 
+ Proyecto de administracion escolar 
